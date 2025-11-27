@@ -1,0 +1,30 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Erik at the Movies"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # logo = "img/erik.jpg"
+  # secondaryLogo = "img/secondary-logo.png"
+  description = "Film reviews and commentary by Erik Larson"
+  # copyright = "Copy, _right?_ :thinking_face:"
+
+[params.author]
+  name = "Erik Larson"
+  image = "http://localhost:1313/img/demo-avatar.jpg"  # Demo - use full URL in production
+  headline = "Film enthusiast and movie critic"
+  bio = "Film enthusiast and movie critic"
+  links = [
+    { letterboxd = "https://letterboxd.com/eriklarson" },
+    # { github = "https://github.com/zo0o0ot" },
+    # { twitter = "https://twitter.com/erikatthemovies" },
+    # { instagram = "https://instagram.com/username" },
+    # { youtube = "https://youtube.com/@username" },
+    # { ko-fi = "https://ko-fi.com/username" },
+    # { patreon = "https://www.patreon.com/username" },
+  ]

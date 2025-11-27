@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+  <defs>
+    <g id="filmstrip">
+      <rect width="80" height="200" fill="#333" rx="5" />
+      <rect x="5" y="5" width="10" height="15" fill="#111"/>
+      <rect x="65" y="5" width="10" height="15" fill="#111"/>
+      <rect x="5" y="30" width="10" height="15" fill="#111"/>
+      <rect x="65" y="30" width="10" height="15" fill="#111"/>
+      <rect x="5" y="55" width="10" height="15" fill="#111"/>
+      <rect x="65" y="55" width="10" height="15" fill="#111"/>
+      <rect x="5" y="80" width="10" height="15" fill="#111"/>
+      <rect x="65" y="80" width="10" height="15" fill="#111"/>
+      <rect x="5" y="105" width="10" height="15" fill="#111"/>
+      <rect x="65" y="105" width="10" height="15" fill="#111"/>
+      <rect x="5" y="130" width="10" height="15" fill="#111"/>
+      <rect x="65" y="130" width="10" height="15" fill="#111"/>
+      <rect x="5" y="155" width="10" height="15" fill="#111"/>
+      <rect x="65" y="155" width="10" height="15" fill="#111"/>
+      <rect x="5" y="180" width="10" height="15" fill="#111"/>
+      <rect x="65" y="180" width="10" height="15" fill="#111"/>
+    </g>
+  </defs>
+
+  <g transform="translate(50, -200)">
+    <use href="#filmstrip" y="0" />
+    <use href="#filmstrip" y="220" />
+    <use href="#filmstrip" y="440" />
+    <use href="#filmstrip" y="660" />
+    <animateTransform attributeName="transform" type="translate" from="50 -200" to="50 0" dur="20s" repeatCount="indefinite" />
+  </g>
+  
+  <g transform="translate(200, -300)">
+    <use href="#filmstrip" y="0" transform="scale(0.8)"/>
+    <use href="#filmstrip" y="220" transform="scale(0.8)"/>
+    <use href="#filmstrip" y="440" transform="scale(0.8)"/>
+    <use href="#filmstrip" y="660" transform="scale(0.8)"/>
+    <use href="#filmstrip" y="880" transform="scale(0.8)"/>
+    <animateTransform attributeName="transform" type="translate" from="200 -300" to="200 -100" dur="15s" repeatCount="indefinite" />
+  </g>
+  
+   <g transform="translate(350, -100)">
+    <use href="#filmstrip" y="0" transform="scale(1.2)"/>
+    <use href="#filmstrip" y="240" transform="scale(1.2)"/>
+    <use href="#filmstrip" y="480" transform="scale(1.2)"/>
+    <animateTransform attributeName="transform" type="translate" from="350 -100" to="350 100" dur="25s" repeatCount="indefinite" />
+  </g>
+  
+  <g transform="translate(500, -250)">
+    <use href="#filmstrip" y="0" />
+    <use href="#filmstrip" y="220" />
+    <use href="#filmstrip" y="440" />
+    <use href="#filmstrip" y="660" />
+    <animateTransform attributeName="transform" type="translate" from="500 -250" to="500 -50" dur="18s" repeatCount="indefinite" />
+  </g>
+  
+  <g transform="translate(650, -150)">
+    <use href="#filmstrip" y="0" transform="scale(0.9)"/>
+    <use href="#filmstrip" y="210" transform="scale(0.9)"/>
+    <use href="#filmstrip" y="420" transform="scale(0.9)"/>
+    <use href="#filmstrip" y="630" transform="scale(0.9)"/>
+    <use href="#filmstrip" y="840" transform="scale(0.9)"/>
+    <animateTransform attributeName="transform" type="translate" from="650 -150" to="650 50" dur="22s" repeatCount="indefinite" />
+  </g>
+
+</svg>

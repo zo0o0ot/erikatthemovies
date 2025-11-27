@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  style="margin:auto;background:rgba(NaN, NaN, NaN, 0);display:block;z-index:1;position:relative"
+  width="1084" height="322" preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
+  <defs>
+    <pattern id="filmstrip-pattern-classic" x="0" y="0" width="345.6" height="345.6"
+      patternUnits="userSpaceOnUse">
+      <g transform="scale(1.35)">
+        <!-- First group - light gray film strips, 10s duration -->
+        <g>
+          <!-- Film strip repeating pattern -->
+          <g transform="translate(40, 20) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <g transform="translate(180, 40) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <g transform="translate(-100, 120) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <g transform="translate(140, 160) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <g transform="translate(-40, -120) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <g transform="translate(200, -80) rotate(45)">
+            <rect x="0" y="0" width="80" height="30" fill="#7a7a7a" stroke="#3a3a3a" stroke-width="2"/>
+            <rect x="2" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="2" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="2" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="10" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="18" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="26" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="54" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="62" y="22" width="6" height="6" fill="#1a1a1a"/>
+            <rect x="70" y="22" width="6" height="6" fill="#1a1a1a"/>
+          </g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
+            keyTimes="0;1" repeatCount="indefinite" dur="10s"></animateTransform>
+        </g>
+
+        <!-- Second group - medium gray film strips, 5s duration -->
+        <g>
+          <g transform="translate(100, 10) rotate(45)">
+            <rect x="0" y="0" width="70" height="28" fill="#5a5a5a" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="2" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="2" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="21" width="5" height="5" fill="#0a0a0a"/>
+          </g>
+          <g transform="translate(-30, 90) rotate(45)">
+            <rect x="0" y="0" width="70" height="28" fill="#5a5a5a" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="2" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="2" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="21" width="5" height="5" fill="#0a0a0a"/>
+          </g>
+          <g transform="translate(210, 70) rotate(45)">
+            <rect x="0" y="0" width="70" height="28" fill="#5a5a5a" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="2" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="2" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="21" width="5" height="5" fill="#0a0a0a"/>
+          </g>
+          <g transform="translate(70, -100) rotate(45)">
+            <rect x="0" y="0" width="70" height="28" fill="#5a5a5a" stroke="#2a2a2a" stroke-width="2"/>
+            <rect x="2" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="2" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="2" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="9" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="16" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="23" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="44" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="51" y="21" width="5" height="5" fill="#0a0a0a"/>
+            <rect x="58" y="21" width="5" height="5" fill="#0a0a0a"/>
+          </g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
+            keyTimes="0;1" repeatCount="indefinite" dur="5s"></animateTransform>
+        </g>
+
+        <!-- Third group - darker gray film strips, 10.33s duration -->
+        <g>
+          <g transform="translate(20, 60) rotate(45)">
+            <rect x="0" y="0" width="60" height="25" fill="#4a4a4a" stroke="#7a7a7a" stroke-width="1.5"/>
+            <rect x="2" y="2" width="4" height="4" fill="#000"/>
+            <rect x="8" y="2" width="4" height="4" fill="#000"/>
+            <rect x="14" y="2" width="4" height="4" fill="#000"/>
+            <rect x="20" y="2" width="4" height="4" fill="#000"/>
+            <rect x="38" y="2" width="4" height="4" fill="#000"/>
+            <rect x="44" y="2" width="4" height="4" fill="#000"/>
+            <rect x="50" y="2" width="4" height="4" fill="#000"/>
+            <rect x="2" y="19" width="4" height="4" fill="#000"/>
+            <rect x="8" y="19" width="4" height="4" fill="#000"/>
+            <rect x="14" y="19" width="4" height="4" fill="#000"/>
+            <rect x="20" y="19" width="4" height="4" fill="#000"/>
+            <rect x="38" y="19" width="4" height="4" fill="#000"/>
+            <rect x="44" y="19" width="4" height="4" fill="#000"/>
+            <rect x="50" y="19" width="4" height="4" fill="#000"/>
+          </g>
+          <g transform="translate(160, 0) rotate(45)">
+            <rect x="0" y="0" width="60" height="25" fill="#4a4a4a" stroke="#7a7a7a" stroke-width="1.5"/>
+            <rect x="2" y="2" width="4" height="4" fill="#000"/>
+            <rect x="8" y="2" width="4" height="4" fill="#000"/>
+            <rect x="14" y="2" width="4" height="4" fill="#000"/>
+            <rect x="20" y="2" width="4" height="4" fill="#000"/>
+            <rect x="38" y="2" width="4" height="4" fill="#000"/>
+            <rect x="44" y="2" width="4" height="4" fill="#000"/>
+            <rect x="50" y="2" width="4" height="4" fill="#000"/>
+            <rect x="2" y="19" width="4" height="4" fill="#000"/>
+            <rect x="8" y="19" width="4" height="4" fill="#000"/>
+            <rect x="14" y="19" width="4" height="4" fill="#000"/>
+            <rect x="20" y="19" width="4" height="4" fill="#000"/>
+            <rect x="38" y="19" width="4" height="4" fill="#000"/>
+            <rect x="44" y="19" width="4" height="4" fill="#000"/>
+            <rect x="50" y="19" width="4" height="4" fill="#000"/>
+          </g>
+          <g transform="translate(-60, 140) rotate(45)">
+            <rect x="0" y="0" width="60" height="25" fill="#4a4a4a" stroke="#7a7a7a" stroke-width="1.5"/>
+            <rect x="2" y="2" width="4" height="4" fill="#000"/>
+            <rect x="8" y="2" width="4" height="4" fill="#000"/>
+            <rect x="14" y="2" width="4" height="4" fill="#000"/>
+            <rect x="20" y="2" width="4" height="4" fill="#000"/>
+            <rect x="38" y="2" width="4" height="4" fill="#000"/>
+            <rect x="44" y="2" width="4" height="4" fill="#000"/>
+            <rect x="50" y="2" width="4" height="4" fill="#000"/>
+            <rect x="2" y="19" width="4" height="4" fill="#000"/>
+            <rect x="8" y="19" width="4" height="4" fill="#000"/>
+            <rect x="14" y="19" width="4" height="4" fill="#000"/>
+            <rect x="20" y="19" width="4" height="4" fill="#000"/>
+            <rect x="38" y="19" width="4" height="4" fill="#000"/>
+            <rect x="44" y="19" width="4" height="4" fill="#000"/>
+            <rect x="50" y="19" width="4" height="4" fill="#000"/>
+          </g>
+          <g transform="translate(110, -60) rotate(45)">
+            <rect x="0" y="0" width="60" height="25" fill="#4a4a4a" stroke="#7a7a7a" stroke-width="1.5"/>
+            <rect x="2" y="2" width="4" height="4" fill="#000"/>
+            <rect x="8" y="2" width="4" height="4" fill="#000"/>
+            <rect x="14" y="2" width="4" height="4" fill="#000"/>
+            <rect x="20" y="2" width="4" height="4" fill="#000"/>
+            <rect x="38" y="2" width="4" height="4" fill="#000"/>
+            <rect x="44" y="2" width="4" height="4" fill="#000"/>
+            <rect x="50" y="2" width="4" height="4" fill="#000"/>
+            <rect x="2" y="19" width="4" height="4" fill="#000"/>
+            <rect x="8" y="19" width="4" height="4" fill="#000"/>
+            <rect x="14" y="19" width="4" height="4" fill="#000"/>
+            <rect x="20" y="19" width="4" height="4" fill="#000"/>
+            <rect x="38" y="19" width="4" height="4" fill="#000"/>
+            <rect x="44" y="19" width="4" height="4" fill="#000"/>
+            <rect x="50" y="19" width="4" height="4" fill="#000"/>
+          </g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;-256 256"
+            keyTimes="0;1" repeatCount="indefinite" dur="10.3333333333333335s"></animateTransform>
+        </g>
+      </g>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1084" height="322" fill="url(#filmstrip-pattern-classic)"></rect>
+</svg>
