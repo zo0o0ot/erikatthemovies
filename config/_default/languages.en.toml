@@ -16,7 +16,7 @@ title = "Erik at the Movies"
 
 [params.author]
   name = "Erik Larson"
-  image = "https://zo0o0ot.github.io/erikatthemovies/img/erik.jpg"
+  # image = "https://zo0o0ot.github.io/erikatthemovies/img/erik.jpg"  # External URLs don't work with Blowfish image processing
   headline = "Film enthusiast and movie critic"
   bio = "Film enthusiast and movie critic"
   links = [
