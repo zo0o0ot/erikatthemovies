@@ -16,11 +16,11 @@ title = "Erik at the Movies"
 
 [params.author]
   name = "Erik Larson"
-  # image = "https://zo0o0ot.github.io/erikatthemovies/img/erik.jpg"  # External URLs don't work with Blowfish image processing
+  image = "img/erik.jpg"
   headline = "Film enthusiast and movie critic"
   bio = "Film enthusiast and movie critic"
   links = [
-    { letterboxd = "https://letterboxd.com/eriklarson" },
+    { letterboxd = "https://letterboxd.com/realeriklarson" },
     # { github = "https://github.com/zo0o0ot" },
     # { twitter = "https://twitter.com/erikatthemovies" },
     # { instagram = "https://instagram.com/username" },

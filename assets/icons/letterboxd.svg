@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <g fill="currentColor">
+    <!-- Left circle (orange) -->
+    <ellipse cx="131" cy="250" rx="70" ry="70"/>
+    <!-- Center circle (green) -->
+    <ellipse cx="250" cy="250" rx="70" ry="70"/>
+    <!-- Right circle (blue) -->
+    <ellipse cx="369" cy="250" rx="70" ry="70"/>
+    <!-- Left overlap -->
+    <path d="M190.5,213C197.2,223.7,201,236.4,201,250c0,13.6-3.8,26.3-10.5,37 6.7-10.7,10.5-23.4,10.5-37 0-13.6-3.8-26.3-10.5-37z" fill="none" stroke="currentColor" stroke-width="8"/>
+    <!-- Right overlap -->
+    <path d="M309.5,287c-6.7-10.7-10.5-23.4-10.5-37c0-13.6,3.8-26.3,10.5-37 -6.7,10.7-10.5,23.4-10.5,37 0,13.6,3.8,26.3,10.5,37z" fill="none" stroke="currentColor" stroke-width="8"/>
+  </g>
+</svg>
