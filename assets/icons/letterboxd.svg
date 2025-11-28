@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <g fill="currentColor">
-    <!-- Left circle (orange) -->
-    <ellipse cx="131" cy="250" rx="70" ry="70"/>
-    <!-- Center circle (green) -->
-    <ellipse cx="250" cy="250" rx="70" ry="70"/>
-    <!-- Right circle (blue) -->
-    <ellipse cx="369" cy="250" rx="70" ry="70"/>
-    <!-- Left overlap -->
-    <path d="M190.5,213C197.2,223.7,201,236.4,201,250c0,13.6-3.8,26.3-10.5,37 6.7-10.7,10.5-23.4,10.5-37 0-13.6-3.8-26.3-10.5-37z" fill="none" stroke="currentColor" stroke-width="8"/>
-    <!-- Right overlap -->
-    <path d="M309.5,287c-6.7-10.7-10.5-23.4-10.5-37c0-13.6,3.8-26.3,10.5-37 -6.7,10.7-10.5,23.4-10.5,37 0,13.6,3.8,26.3,10.5,37z" fill="none" stroke="currentColor" stroke-width="8"/>
+  <g transform="translate(61, 180)">
+    <!-- Left circle (Orange) -->
+    <ellipse fill="#FF8000" cx="70" cy="70" rx="70" ry="70"/>
+    <!-- Center circle (Green) -->
+    <ellipse fill="#00E054" cx="189" cy="70" rx="70" ry="70"/>
+    <!-- Right circle (Blue) -->
+    <ellipse fill="#40BCF4" cx="308" cy="70" rx="70" ry="70"/>
+    <!-- Left overlap (gray) -->
+    <path d="M129.5,107 C122.8,96.3 118.9,83.6 118.9,70 C118.9,56.4 122.8,43.7 129.5,33 C136.3,43.7 140.2,56.4 140.2,70 C140.2,83.6 136.3,96.3 129.5,107 Z" fill="#556677"/>
+    <!-- Right overlap (gray) -->
+    <path d="M248.5,33 C255.2,43.7 259.1,56.4 259.1,70 C259.1,83.6 255.2,96.3 248.5,107 C241.7,96.3 237.8,83.6 237.8,70 C237.8,56.4 241.7,43.7 248.5,33 Z" fill="#556677"/>
   </g>
 </svg>
