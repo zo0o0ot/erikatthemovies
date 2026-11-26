@@ -129,9 +129,12 @@ description: "Brief one-sentence summary of your review"
 tags: ["genre", "director"]
 categories: ["reviews"]
 series: ["2026 Reviews"]
-# Optional: drop a featured.jpg in this folder to use as the card and hero thumbnail
-# featured: "featured.jpg"
+# Any image in this folder with "featured" in the filename (e.g., featured.png or featured.jpg)
+# automatically shows up as the post's card thumbnail and hero image.
 ---
+
+<!-- Place featured.png in this folder (or update the filename, e.g., featured.jpg) -->
+![Movie Title](featured.png)
 
 Opening thoughts and introduction to the film.
 
@@ -152,9 +155,9 @@ Your overall thoughts and rating.
 To finish and publish the review:
 
 1. **Edit `content/reviews/movie-title/index.md`** with your review, description, and tags
-2. **Optional thumbnail**: drop an image named `featured.jpg` into `content/reviews/movie-title/` and uncomment `featured: "featured.jpg"`
+2. **Add a featured image / thumbnail**: drop an image named `featured.png` (or `featured.jpg`, or any filename containing `featured`) into `content/reviews/movie-title/`. Blowfish automatically uses any image with `featured` in the filename as the post's card thumbnail and hero image, and the line `![Movie Title](featured.png)` at the top of the template also displays it at the top of the review (update the filename if you use `.jpg`, or remove the line if you only want it as the thumbnail)
 3. **Preview drafts locally** using `hugo server -D --disableFastRender --baseURL http://localhost:1313/`
-4. **Set `draft: false`** when you're ready to publish, then commit and push
+4. **Set `draft: false`** when you're ready to publish, then commit and push (including the image file)
 
 ## Adding PDF Reviews and Documents
 
@@ -297,10 +300,11 @@ Blowfish automatically optimizes local images (generating responsive sizes and c
 
 ### Card Thumbnails and Hero Images
 
-To give any review or archived post a thumbnail on the homepage/list cards and a hero background:
+Any image placed in a post's folder whose filename contains **`featured`** (such as `featured.jpg` or `featured.png`) will automatically show up as the **thumbnail** for that post on the homepage cards, review lists, and hero background (Blowfish also matches `cover` and `thumbnail` in filenames):
 
-1. Save the image inside that post's folder with **`featured`**, **`cover`**, or **`thumbnail`** in the filename (for example, `featured.jpg` or `cover.png`).
-2. Blowfish detects it automatically — you don't even need to reference it in the body (and you can also add `featured: "featured.jpg"` in front matter for clarity).
+1. Save the image inside that post's folder (e.g., `content/reviews/dune-part-two/featured.jpg` or `featured.png`).
+2. Blowfish detects it automatically for the post thumbnail and hero — no extra front matter is required.
+3. If you also want the image displayed inside the body of the post (as the movie review archetype does with `![Movie Title](featured.png)` at the top), keep that Markdown image line (updating `.png` to `.jpg` if needed). If you only want it as the card thumbnail/hero, simply remove the Markdown image line from the body.
 
 ### Captions, Sizing Posters, and Galleries
 

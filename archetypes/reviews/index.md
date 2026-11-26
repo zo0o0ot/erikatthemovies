@@ -7,9 +7,12 @@ description: "Brief one-sentence summary of your review"
 tags: ["genre", "director"]
 categories: ["reviews"]
 series: ["{{ now.Format "2006" }} Reviews"]
-# Optional: drop a featured.jpg in this folder to use as the card and hero thumbnail
-# featured: "featured.jpg"
+# Any image in this folder with "featured" in the filename (e.g., featured.png or featured.jpg)
+# automatically shows up as the post's card thumbnail and hero image.
 ---
+
+<!-- Place featured.png in this folder (or update the filename, e.g., featured.jpg) -->
+![{{ replace .File.ContentBaseName "-" " " | title }}](featured.png)
 
 Opening thoughts and introduction to the film.
 
