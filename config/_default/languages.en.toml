@@ -29,3 +29,6 @@ title = "Erik at the Movies"
     # { ko-fi = "https://ko-fi.com/username" },
     # { patreon = "https://www.patreon.com/username" },
   ]
+
+[params.author.linkLabels]
+  mnfca = "Minnesota Film Critics Association"
