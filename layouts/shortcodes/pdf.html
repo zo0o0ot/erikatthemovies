@@ -1,0 +1,151 @@
+{{- $rawSrc := .Get "src" | default (.Get 0) -}}
+{{- if not $rawSrc -}}
+  {{- errorf "pdf shortcode requires a 'src' parameter: %s" .Position -}}
+{{- end -}}
+
+{{- $pdfURL := "" -}}
+{{- $parsed := urls.Parse $rawSrc -}}
+{{- if or (eq $parsed.Scheme "http") (eq $parsed.Scheme "https") -}}
+  {{- $pdfURL = $rawSrc -}}
+{{- else if $.Page.Resources.GetMatch $rawSrc -}}
+  {{- $pdfURL = ($.Page.Resources.GetMatch $rawSrc).RelPermalink -}}
+{{- else if resources.Get $rawSrc -}}
+  {{- $pdfURL = (resources.Get $rawSrc).RelPermalink -}}
+{{- else -}}
+  {{- $pdfURL = (strings.TrimPrefix "/" $rawSrc) | relURL -}}
+{{- end -}}
+
+{{- $filename := path.Base $rawSrc -}}
+{{- $title := .Get "title" | default $filename -}}
+{{- $height := .Get "height" | default "750px" -}}
+{{- $initialPage := .Get "page" | default "1" -}}
+{{- $showDownload := ne (.Get "download") "false" -}}
+{{- $id := printf "pdf-viewer-%d" .Ordinal -}}
+
+<div
+  id="{{ $id }}"
+  class="not-prose pdf-viewer"
+  role="region"
+  aria-label="PDF viewer: {{ $title }}"
+  data-pdf-url="{{ $pdfURL }}"
+  data-initial-page="{{ $initialPage }}"
+  style="--pdf-viewer-height: {{ $height }};">
+  <div class="pdf-viewer__toolbar">
+    <div class="pdf-viewer__meta">
+      <svg
+        class="pdf-viewer__doc-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="8" y1="13" x2="16" y2="13"/>
+        <line x1="8" y1="17" x2="13" y2="17"/>
+      </svg>
+      <span class="pdf-viewer__title" title="{{ $title }}">{{ $title }}</span>
+    </div>
+
+    <div class="pdf-viewer__controls">
+      <div class="pdf-viewer__group" aria-label="Page navigation">
+        <button type="button" class="pdf-viewer__btn" data-action="prev" aria-label="Previous page" title="Previous page" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <span class="pdf-viewer__page-indicator">
+          <input
+            type="number"
+            class="pdf-viewer__page-input"
+            data-role="page-input"
+            min="1"
+            value="{{ $initialPage }}"
+            aria-label="Current page number">
+          <span class="pdf-viewer__page-sep">/</span>
+          <span data-role="page-count">—</span>
+        </span>
+        <button type="button" class="pdf-viewer__btn" data-action="next" aria-label="Next page" title="Next page" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="pdf-viewer__group" aria-label="Zoom controls">
+        <button type="button" class="pdf-viewer__btn" data-action="zoom-out" aria-label="Zoom out" title="Zoom out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+        <button type="button" class="pdf-viewer__btn pdf-viewer__btn--text" data-action="zoom-fit" aria-label="Fit to width" title="Fit to width" data-role="zoom-label">
+          Fit
+        </button>
+        <button type="button" class="pdf-viewer__btn" data-action="zoom-in" aria-label="Zoom in" title="Zoom in">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="pdf-viewer__group" aria-label="Document actions">
+        <a
+          class="pdf-viewer__btn"
+          href="{{ $pdfURL }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open PDF in new tab"
+          title="Open in new tab">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        {{- if $showDownload }}
+        <a
+          class="pdf-viewer__btn"
+          href="{{ $pdfURL }}"
+          download="{{ $filename }}"
+          aria-label="Download PDF"
+          title="Download PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="pdf-viewer__stage" data-role="stage" tabindex="0">
+    <div class="pdf-viewer__status" data-role="status" aria-live="polite">
+      <span class="pdf-viewer__spinner" aria-hidden="true"></span>
+      <span>Loading PDF…</span>
+    </div>
+    <canvas class="pdf-viewer__canvas" data-role="canvas" hidden></canvas>
+    <div class="pdf-viewer__error" data-role="error" hidden>
+      <p>Unable to render this PDF inline.</p>
+      <a class="pdf-viewer__fallback-link" href="{{ $pdfURL }}" target="_blank" rel="noopener noreferrer">
+        Open PDF directly
+      </a>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="pdf-viewer__noscript">
+      <p>JavaScript is disabled. You can still view the document directly:</p>
+      <a class="pdf-viewer__fallback-link" href="{{ $pdfURL }}" target="_blank" rel="noopener noreferrer">
+        Open {{ $title }}
+      </a>
+    </div>
+  </noscript>
+</div>

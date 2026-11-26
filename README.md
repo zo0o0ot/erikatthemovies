@@ -9,6 +9,7 @@ Live site: https://zo0o0ot.github.io/erikatthemovies/
 - [Quick Start for Forking](#quick-start-for-forking)
 - [Customizing Your Site](#customizing-your-site)
 - [Adding Movie Reviews](#adding-movie-reviews)
+- [Adding PDF Reviews and Documents](#adding-pdf-reviews-and-documents)
 - [Local Development](#local-development)
 - [Deploying to GitHub Pages](#deploying-to-github-pages)
 - [Troubleshooting](#troubleshooting)
@@ -96,24 +97,29 @@ See `assets/icons/letterboxd.svg` for an example.
 
 ## Adding Movie Reviews
 
-Create new review files in the `content/reviews/` directory:
+This site includes a built-in Hugo template ([`archetypes/reviews/index.md`](archetypes/reviews/index.md)) so you can scaffold a new movie review page bundle in one command:
 
 ```bash
-hugo new content/reviews/movie-title.md
+hugo new content reviews/movie-title
 ```
 
-Edit the front matter of the new file:
+This creates `content/reviews/movie-title/index.md` pre-filled with your author metadata, date, categories, and review headings:
 
 ```yaml
 ---
-title: "Movie Title (Year)"
-date: 2024-01-15
-draft: false
-description: "Brief description of your review"
-tags: ["genre", "director", "actor"]
+title: "Movie Title"
+date: 2026-11-25
+draft: true
+authors: ["Erik Larson"]
+description: "Brief one-sentence summary of your review"
+tags: ["genre", "director"]
+categories: ["reviews"]
+series: ["2026 Reviews"]
+# Optional: drop a featured.jpg in this folder to use as the card and hero thumbnail
+# featured: "featured.jpg"
 ---
 
-Your review content goes here. You can use markdown formatting.
+Opening thoughts and introduction to the film.
 
 ## What I Liked
 
@@ -128,6 +134,82 @@ Your review content goes here. You can use markdown formatting.
 
 Your overall thoughts and rating.
 ```
+
+To finish and publish the review:
+
+1. **Edit `content/reviews/movie-title/index.md`** with your review, description, and tags
+2. **Optional thumbnail**: drop an image named `featured.jpg` into `content/reviews/movie-title/` and uncomment `featured: "featured.jpg"`
+3. **Preview drafts locally** using `hugo server -D --disableFastRender --baseURL http://localhost:1313/`
+4. **Set `draft: false`** when you're ready to publish, then commit and push
+
+## Adding PDF Reviews and Documents
+
+You can publish PDF articles, essays, or newspaper clippings that render interactively right inside the browser (on both desktop and mobile) using the `pdf` shortcode and the built-in PDF review template ([`archetypes/pdf-review/index.md`](archetypes/pdf-review/index.md)).
+
+### Step-by-Step (Recommended: Page Bundle)
+
+1. **Create a new PDF review folder** from the template:
+   ```bash
+   hugo new content --kind pdf-review reviews/article-title
+   ```
+   This creates `content/reviews/article-title/index.md` with the front matter and `pdf` shortcode already set up.
+
+2. **Copy your PDF into that folder**:
+   ```
+   content/reviews/article-title/
+   ├── index.md
+   ├── my-article.pdf
+   └── featured.jpg        # Optional card/hero image
+   ```
+
+3. **Update `index.md`** to point `src` at your PDF filename and fill in the metadata:
+   ```yaml
+   ---
+   title: "My Published Article"
+   date: 2026-11-25
+   draft: false
+   authors: ["Erik Larson"]
+   description: "Originally published in The Hamline Oracle"
+   tags: ["film-criticism", "festival"]
+   categories: ["reviews"]
+   ---
+
+   Optional intro text above the viewer.
+
+   {{< pdf src="my-article.pdf" title="My Published Article" >}}
+   ```
+
+4. **Preview locally** (`hugo server --disableFastRender --baseURL http://localhost:1313/`), then commit **both** `index.md` and the `.pdf` file and push to deploy:
+   ```bash
+   git add content/reviews/article-title/
+   git commit -m "Add PDF review: My Published Article"
+   git push
+   ```
+
+### Shortcode Options
+
+You can also drop the `{{< pdf >}}` shortcode into any existing review or page:
+
+```markdown
+<!-- PDF in the same page bundle folder (recommended) -->
+{{< pdf src="article.pdf" >}}
+
+<!-- PDF in static/pdfs/ (shared across pages) -->
+{{< pdf src="pdfs/article.pdf" title="Festival Coverage" >}}
+
+<!-- With custom height, starting page, and download button hidden -->
+{{< pdf src="article.pdf" title="Full Issue" height="600px" page="2" download="false" >}}
+```
+
+| Parameter | Default | Description |
+| :--- | :--- | :--- |
+| `src` | *(required)* | Filename in the page bundle, path under `static/` or `assets/`, or external `https://` URL |
+| `title` | PDF filename | Title shown in the viewer toolbar |
+| `height` | `750px` | Maximum scrollable height of the viewer |
+| `page` | `1` | Page number to open on |
+| `download` | `"true"` | Set to `"false"` to hide the download button |
+
+> **Tip:** The viewer supports Prev/Next buttons, typing a page number directly, Left/Right arrow keys when focused, Zoom (`-` / `Fit` / `+`), Open in New Tab, and Download. PDF.js is self-hosted and only loads on pages that include the `{{< pdf >}}` shortcode.
 
 ## Local Development
 
@@ -247,18 +329,34 @@ hugo server --disableFastRender --baseURL http://localhost:1313/
 ```
 erikatthemovies/
 ├── .github/workflows/hugo.yml    # GitHub Actions deployment
+├── archetypes/
+│   ├── reviews/index.md          # Template for normal movie reviews
+│   └── pdf-review/index.md       # Template for PDF review posts
 ├── assets/
-│   ├── icons/                    # Custom social media icons
-│   │   └── letterboxd.svg       # Custom Letterboxd icon
-│   └── img/                      # Images for Hugo processing
-│       └── erik.jpg              # Author photo
+│   ├── css/
+│   │   ├── custom.css            # Custom icon styles
+│   │   └── pdf-viewer.css        # PDF viewer styles (loaded conditionally)
+│   ├── icons/                    # Custom social/affiliation icons
+│   │   ├── letterboxd.svg        # Custom Letterboxd icon
+│   │   └── mnfca.png             # Minnesota Film Critics Association icon
+│   ├── img/                      # Images for Hugo processing
+│   │   └── erik.jpg              # Author photo
+│   ├── js/
+│   │   └── pdf-viewer.js         # Interactive PDF.js viewer controller
+│   └── lib/pdfjs/                # Self-hosted PDF.js library & worker
 ├── config/_default/              # Hugo configuration
-│   ├── hugo.toml                # Main site config
-│   ├── languages.en.toml        # Author info and language settings
-│   ├── menus.en.toml            # Navigation menus
-│   └── params.toml              # Theme parameters
+│   ├── hugo.toml                 # Main site config
+│   ├── languages.en.toml         # Author info and social links
+│   ├── menus.en.toml             # Navigation menus
+│   └── params.toml               # Theme parameters
 ├── content/
 │   └── reviews/                  # Movie review posts
+├── layouts/
+│   ├── partials/
+│   │   ├── extend-head-uncached.html  # Conditional PDF.js loader
+│   │   └── icon.html             # SVG + PNG/WebP icon support
+│   └── shortcodes/
+│       └── pdf.html              # Interactive {{< pdf >}} shortcode
 ├── static/
 │   └── img/
 │       └── background.svg        # Animated background

@@ -1,0 +1,19 @@
+{{ if .Page.HasShortcode "pdf" }}
+  {{ $alg := .Site.Params.fingerprintAlgorithm | default "sha512" }}
+  {{ $pdfCSS := resources.Get "css/pdf-viewer.css" | resources.Minify | resources.Fingerprint $alg }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ $pdfCSS.RelPermalink }}"
+    integrity="{{ $pdfCSS.Data.Integrity }}">
+  {{ $pdfLib := resources.Get "lib/pdfjs/pdf.min.js" | resources.Fingerprint $alg }}
+  {{ $pdfWorker := resources.Get "lib/pdfjs/pdf.worker.min.js" | resources.Fingerprint $alg }}
+  {{ $pdfViewer := resources.Get "js/pdf-viewer.js" | resources.Minify | resources.Fingerprint $alg }}
+  <script
+    id="pdf-viewer-script"
+    type="module"
+    src="{{ $pdfViewer.RelPermalink }}"
+    integrity="{{ $pdfViewer.Data.Integrity }}"
+    data-pdfjs-src="{{ $pdfLib.RelPermalink }}"
+    data-pdfjs-worker="{{ $pdfWorker.RelPermalink }}"></script>
+{{ end }}
