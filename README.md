@@ -10,6 +10,7 @@ Live site: https://zo0o0ot.github.io/erikatthemovies/
 - [Customizing Your Site](#customizing-your-site)
 - [Adding Movie Reviews](#adding-movie-reviews)
 - [Adding PDF Reviews and Documents](#adding-pdf-reviews-and-documents)
+- [Adding Content to Archives](#adding-content-to-archives)
 - [Local Development](#local-development)
 - [Deploying to GitHub Pages](#deploying-to-github-pages)
 - [Troubleshooting](#troubleshooting)
@@ -101,8 +102,8 @@ Hugo uses **archetype** files in the `archetypes/` folder as starter templates w
 
 | Archetype File | Command That Uses It | Purpose |
 | :--- | :--- | :--- |
-| [`archetypes/reviews/index.md`](archetypes/reviews/index.md) | `hugo new content reviews/<slug>` | Standard movie review page bundle |
-| [`archetypes/pdf-review/index.md`](archetypes/pdf-review/index.md) | `hugo new content --kind pdf-review reviews/<slug>` | PDF review/article page bundle with `{{< pdf >}}` shortcode |
+| [`archetypes/reviews/index.md`](archetypes/reviews/index.md) | `hugo new content reviews/<slug>` or `hugo new content --kind reviews archives/<slug>` | Standard movie review page bundle |
+| [`archetypes/pdf-review/index.md`](archetypes/pdf-review/index.md) | `hugo new content --kind pdf-review reviews/<slug>` or `archives/<slug>` | PDF review/article page bundle with `{{< pdf >}}` shortcode |
 | [`archetypes/default.md`](archetypes/default.md) | `hugo new content <other-path>` | Fallback template for other content sections |
 
 > **Tip:** If you fork this repo, update `authors: ["Erik Larson"]` inside `archetypes/reviews/index.md` and `archetypes/pdf-review/index.md` to your own name. To create a new template type, add `archetypes/<template-name>/index.md` and run `hugo new content --kind <template-name> reviews/<slug>`.
@@ -222,6 +223,50 @@ You can also drop the `{{< pdf >}}` shortcode into any existing review or page:
 | `download` | `"true"` | Set to `"false"` to hide the download button |
 
 > **Tip:** The viewer supports Prev/Next buttons, typing a page number directly, Left/Right arrow keys when focused, Zoom (`-` / `Fit` / `+`), Open in New Tab, and Download. PDF.js is self-hosted and only loads on pages that include the `{{< pdf >}}` shortcode.
+
+## Adding Content to Archives
+
+The **Archives** section (`content/archives/`, accessible at `/archives/`) holds previously published reviews and articles from other outlets. You can reuse both the normal review archetype and the PDF review archetype for archived posts by targeting `archives/<slug>` and passing `--kind`:
+
+### Normal (Text) Archived Review
+
+```bash
+hugo new content --kind reviews archives/article-slug
+```
+
+> **Note:** Include `--kind reviews` when creating a normal post under `archives/` so Hugo uses `archetypes/reviews/index.md` instead of falling back to `archetypes/default.md`.
+
+### PDF Archived Review
+
+```bash
+hugo new content --kind pdf-review archives/article-slug
+```
+
+Then copy your PDF file into `content/archives/article-slug/` and update `src="document.pdf"` in `content/archives/article-slug/index.md`:
+
+```
+content/archives/article-slug/
+├── index.md
+├── my-archived-article.pdf   # For PDF posts
+└── featured.jpg              # Optional card/hero image
+```
+
+### Publishing Archived Posts
+
+1. **Set the original publication date** in `date:` (e.g., `date: 2024-05-10`) — the Archives page groups entries by year automatically (`groupByYear = true` in `config/_default/params.toml`).
+2. **Preview drafts locally**:
+   ```bash
+   hugo server -D --disableFastRender --baseURL http://localhost:1313/
+   ```
+   Open `http://localhost:1313/archives/` to check how it renders.
+3. **Set `draft: false`** when ready, then commit and push the entire folder (including any `.pdf` or image files):
+   ```bash
+   git add content/archives/article-slug/
+   git commit -m "Add archived review: Article Title"
+   git push
+   ```
+
+> **Homepage visibility:** Because `mainSections = ["reviews"]` in `config/_default/params.toml`, posts in `content/archives/` appear on the **Archives** page (and in **Tags** / **Authors**) without crowding the homepage **Recent** section. If you ever want archived posts to appear in **Recent** on the homepage too, change it to `mainSections = ["reviews", "archives"]`.
 
 ## Local Development
 
@@ -363,6 +408,7 @@ erikatthemovies/
 │   ├── menus.en.toml             # Navigation menus
 │   └── params.toml               # Theme parameters
 ├── content/
+│   ├── archives/                 # Previously published / archived reviews
 │   └── reviews/                  # Movie review posts
 ├── layouts/
 │   ├── partials/
