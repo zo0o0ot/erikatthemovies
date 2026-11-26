@@ -87,13 +87,25 @@ sed -i 's/#5e6fa3/#YOUR_COLOR_3/g' static/img/background.svg
 
 ### Add Custom Social Media Icons
 
-If you need a social media icon not included in the Blowfish theme:
+If you need a social media or affiliation icon not included in the Blowfish theme:
 
-1. Create an SVG file named after the platform (e.g., `letterboxd.svg`)
+1. Create an SVG (e.g., `letterboxd.svg`) or PNG/WebP (e.g., `mnfca.png`) file named after the platform
 2. Save it in `assets/icons/`
-3. The icon will automatically be available for use in your author links
+3. Add a matching entry under `[params.author]` `links` in `config/_default/languages.en.toml`
 
-See `assets/icons/letterboxd.svg` for an example.
+See `assets/icons/letterboxd.svg` and `assets/icons/mnfca.png` for examples.
+
+### Customize Post Templates (Archetypes)
+
+Hugo uses **archetype** files in the `archetypes/` folder as starter templates whenever you run `hugo new content`. Edit these files directly to change your default author name, tags, front matter fields, or review headings:
+
+| Archetype File | Command That Uses It | Purpose |
+| :--- | :--- | :--- |
+| [`archetypes/reviews/index.md`](archetypes/reviews/index.md) | `hugo new content reviews/<slug>` | Standard movie review page bundle |
+| [`archetypes/pdf-review/index.md`](archetypes/pdf-review/index.md) | `hugo new content --kind pdf-review reviews/<slug>` | PDF review/article page bundle with `{{< pdf >}}` shortcode |
+| [`archetypes/default.md`](archetypes/default.md) | `hugo new content <other-path>` | Fallback template for other content sections |
+
+> **Tip:** If you fork this repo, update `authors: ["Erik Larson"]` inside `archetypes/reviews/index.md` and `archetypes/pdf-review/index.md` to your own name. To create a new template type, add `archetypes/<template-name>/index.md` and run `hugo new content --kind <template-name> reviews/<slug>`.
 
 ## Adding Movie Reviews
 
@@ -330,6 +342,7 @@ hugo server --disableFastRender --baseURL http://localhost:1313/
 erikatthemovies/
 ├── .github/workflows/hugo.yml    # GitHub Actions deployment
 ├── archetypes/
+│   ├── default.md                # Fallback template for other content
 │   ├── reviews/index.md          # Template for normal movie reviews
 │   └── pdf-review/index.md       # Template for PDF review posts
 ├── assets/
