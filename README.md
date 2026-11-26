@@ -11,6 +11,7 @@ Live site: https://zo0o0ot.github.io/erikatthemovies/
 - [Adding Movie Reviews](#adding-movie-reviews)
 - [Adding PDF Reviews and Documents](#adding-pdf-reviews-and-documents)
 - [Adding Content to Archives](#adding-content-to-archives)
+- [Adding Images and Movie Posters](#adding-images-and-movie-posters)
 - [Local Development](#local-development)
 - [Deploying to GitHub Pages](#deploying-to-github-pages)
 - [Troubleshooting](#troubleshooting)
@@ -267,6 +268,72 @@ content/archives/article-slug/
    ```
 
 > **Homepage visibility:** Because `mainSections = ["reviews"]` in `config/_default/params.toml`, posts in `content/archives/` appear on the **Archives** page (and in **Tags** / **Authors**) without crowding the homepage **Recent** section. If you ever want archived posts to appear in **Recent** on the homepage too, change it to `mainSections = ["reviews", "archives"]`.
+
+## Adding Images and Movie Posters
+
+Blowfish automatically optimizes local images (generating responsive sizes and click-to-zoom) and handles the GitHub Pages `/erikatthemovies/` URL prefix when images are stored in either the **post's page bundle folder** or **`assets/img/`**.
+
+### Where to Put Images
+
+1. **Images for a single post (recommended)** — put them right inside that post's folder:
+   ```
+   content/reviews/dune-part-two/
+   ├── index.md
+   ├── featured.jpg        # Automatically used for the card thumbnail & hero background
+   ├── poster.jpg          # Referenced inside index.md
+   └── still-01.jpg        # Referenced inside index.md
+   ```
+   Reference them in `index.md` by filename only:
+   ```markdown
+   ![Dune: Part Two theatrical poster](poster.jpg)
+   ```
+
+2. **Images shared across multiple posts** — put them in `assets/img/` (e.g., `assets/img/festival-logo.png`) and reference them **without a leading slash**:
+   ```markdown
+   ![Festival logo](img/festival-logo.png)
+   ```
+
+> **Important (GitHub Pages subpath):** Avoid storing post images in `static/img/` and referencing them as `/img/...` in Markdown — because the live site is hosted at `/erikatthemovies/`, root-relative `/img/...` paths will 404 on GitHub Pages and skip Blowfish's responsive image optimization. Always use the post's folder or `assets/img/` (`img/...` without a leading slash).
+
+### Card Thumbnails and Hero Images
+
+To give any review or archived post a thumbnail on the homepage/list cards and a hero background:
+
+1. Save the image inside that post's folder with **`featured`**, **`cover`**, or **`thumbnail`** in the filename (for example, `featured.jpg` or `cover.png`).
+2. Blowfish detects it automatically — you don't even need to reference it in the body (and you can also add `featured: "featured.jpg"` in front matter for clarity).
+
+### Captions, Sizing Posters, and Galleries
+
+- **Markdown image with a caption** (text in quotes becomes the `<figcaption>`):
+  ```markdown
+  ![Dune: Part Two poster](poster.jpg "Theatrical poster for *Dune: Part Two* (2024)")
+  ```
+
+- **Blowfish `figure` shortcode** (useful for sizing tall movie posters, centering, adding a link, or disabling click-to-zoom):
+  ```markdown
+  {{< figure
+    src="poster.jpg"
+    alt="Dune: Part Two theatrical poster"
+    caption="Theatrical release poster (2024)"
+    class="w-80 mx-auto"
+  >}}
+  ```
+  Common options: `src`, `alt`, `caption`, `class` (e.g., `w-80 mx-auto` to constrain a tall poster to 320px wide and center it), `href` (make the image clickable), and `nozoom=true` (disable Blowfish's click-to-zoom).
+
+- **Side-by-side movie stills (`gallery` shortcode)**:
+  ```markdown
+  {{< gallery >}}
+    <img src="still-01.jpg" class="grid-w50" alt="Opening desert shot" />
+    <img src="still-02.jpg" class="grid-w50" alt="Arrakis skyline" />
+  {{< /gallery >}}
+  ```
+
+- **Don't forget to commit images** along with your post so GitHub Actions includes them in the build:
+  ```bash
+  git add content/reviews/dune-part-two/
+  git commit -m "Add Dune: Part Two review and poster"
+  git push
+  ```
 
 ## Local Development
 
