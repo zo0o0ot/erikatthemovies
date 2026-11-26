@@ -21,6 +21,7 @@ title = "Erik at the Movies"
   bio = "Film enthusiast and movie critic"
   links = [
     { letterboxd = "https://letterboxd.com/realeriklarson" },
+    { mnfca = "https://mnfca.com/" },
     # { github = "https://github.com/zo0o0ot" },
     # { twitter = "https://twitter.com/erikatthemovies" },
     # { instagram = "https://instagram.com/username" },

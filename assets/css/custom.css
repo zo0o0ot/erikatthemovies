@@ -1,0 +1,8 @@
+/* Match raster icon images (e.g. assets/icons/mnfca.png) to Blowfish's .icon svg sizing */
+.icon img {
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  object-fit: contain;
+}
